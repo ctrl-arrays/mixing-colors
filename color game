@@ -1,0 +1,38 @@
+def mix_colors(color1, color2):
+    # Normalize input to lowercase
+    c1 = color1.lower()
+    c2 = color2.lower()
+    # Define mixes
+    mixes = {
+        ('red', 'blue'): 'purple',
+        ('blue', 'red'): 'purple',
+        ('red', 'yellow'): 'orange',
+        ('yellow', 'red'): 'orange',
+        ('blue', 'yellow'): 'green',
+        ('yellow', 'blue'): 'green',
+        ('red', 'white'): 'pink',
+        ('white', 'red'): 'pink',
+        ('blue', 'white'): 'light blue',
+        ('white', 'blue'): 'light blue',
+        ('yellow', 'white'): 'light yellow',
+        ('white', 'yellow'): 'light yellow',
+        ('black', 'white'): 'gray',
+        ('white', 'black'): 'gray',
+        ('red', 'black'): 'dark red',
+        ('blue', 'black'): 'dark blue',
+        ('yellow', 'black'): 'olive',
+    }
+
+    if c1 == c2:
+        return c1
+    return mixes.get((c1, c2), "Unknow color combo.")
+# Run game
+print("Welcome to the Color Mixing Game.")
+print("Choose two colors to mix. (red, blue, yellow, white or black)")
+
+color1 = input("Enter your first color: ")
+color2 = input("Enter your second color: ")
+
+result = mix_colors(color1, color2)
+
+print(f"You mixed {color1} and {color2} to make: {result}")
